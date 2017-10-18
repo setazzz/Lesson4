@@ -44,10 +44,10 @@ INSERT INTO `Books_Authors` (`bookId`, `authorId`) VALUES
 
 -- d)
 
-select Books.bookId, Books.title, GROUP_CONCAT(Authors.name) as 'Author/-s'
-from Books
+SELECT Books.bookId, Books.title, GROUP_CONCAT(Authors.name) AS 'Author/-s'
+FROM Books
   INNER  JOIN Books_Authors
-    on Books.bookId = Books_Authors.bookId
+    ON Books.bookId = Books_Authors.bookId
   INNER JOIN Authors
     ON Books_Authors.authorId = Authors.authorId
 GROUP BY Books.bookId;
